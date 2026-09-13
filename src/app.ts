@@ -1,16 +1,16 @@
-import express, { Request, Response, NextFunction } from 'express';
-import { router } from './routes';
+import express, { Request, Response, NextFunction } from "express";
+import { router } from "./routes";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/health', (_req: Request, res: Response) => {
-  res.status(200).json({ status: 'ok' });
+app.get("/health", (_req: Request, res: Response) => {
+  res.status(200).json({ status: "ok" });
 });
 
-app.use('/api', router);
+app.use("/api", router);
 
 /**
  * [I]nformation Disclosure — middleware global de erro.
